@@ -175,10 +175,10 @@ int main(int nargs, char ** vargs){
 
 
 	// Mensaje
-	printf("Calculando el número de antenas necesarias para cubrir un mapa de"
+	/*printf("Calculando el número de antenas necesarias para cubrir un mapa de"
 		   " (%d x %d)\ncon una distancia máxima no superior a %d "
 		   "y con %d antenas iniciales\n\n",rows,cols,distMax,nAntenas);
-
+	*/
 	// Reservar memoria para las antenas
 	Antena * antenas = malloc(sizeof(Antena) * (size_t) nAntenas);
 	if(!antenas){
@@ -244,6 +244,7 @@ int main(int nargs, char ** vargs){
 		
 		// Calculo de la nueva antena y actualización del mapa
 		Antena antena = nueva_antena(mapa, rows, cols, max);
+		printf("NEW: %d %d\n",antena.y, antena.x);
 		actualizar(mapa,rows,cols,antena);
 
 	}
